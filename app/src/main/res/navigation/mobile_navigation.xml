@@ -22,4 +22,9 @@
         android:name="br.dev.kgb.mobile.estoquemp.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_cad_produto"
+        android:name="br.dev.kgb.mobile.estoquemp.ui.produto.CadProdutoFragment"
+        android:label="@string/title_cad_produto"
+        tools:layout="@layout/fragment_cad_produto" />
 </navigation>
