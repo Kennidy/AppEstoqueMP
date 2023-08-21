@@ -9,9 +9,18 @@
     <string name="title_cad_produto">Cadastro de Produto</string>
 
     <string-array name="categoriadoproduto">
+        <item>Açougue</item>
         <item>Bebida</item>
-        <item>Produto de Limpeza</item>
+        <item>Cereais</item>
+        <item>Doces</item>
+        <item>Frios e laticínios</item>
         <item>Frutas</item>
+        <item>Padaria</item>
+        <item>Hortifruti</item>
+        <item>Higiene e limpeza</item>
+        <item>Produto de Limpeza</item>
+        <item>Produtos Gerais</item>
+
     </string-array>
 
 </resources>
