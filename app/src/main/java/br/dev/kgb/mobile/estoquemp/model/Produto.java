@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Produto {
+
     //Atributos
 
     private int id;
@@ -11,6 +12,8 @@ public class Produto {
     private String nomeProduto;
     private String codigoProduto;
     private int estoqueProduto;
+
+
 
     //CONSTRUTOR - inicializa atributos de um arquivo JSon
     public Produto (JSONObject jp) {
@@ -63,7 +66,7 @@ public class Produto {
 
     public void setId(int id){ this.id = id;}
     public void setCategoriaProduto(int catePro){
-        if (catePro >= 1 && catePro <=4){
+        if (catePro >= 1 && catePro <=11){
             this.categoriaProduto = catePro;
         }else
             this.categoriaProduto = 0;

@@ -9,6 +9,7 @@
     <string name="title_cad_produto">Cadastro de Produto</string>
 
     <string-array name="categoriadoproduto">
+        <item>Selecionar Categoria</item>
         <item>Açougue</item>
         <item>Bebida</item>
         <item>Cereais</item>
