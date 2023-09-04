@@ -27,6 +27,7 @@ public class CadProdutoFragment extends Fragment implements View.OnClickListener
     private EditText etCodigoDoProduto;
     private EditText etEstoqueDoProduto;
     private Spinner spCategoriaDoProduto;
+    private Spinner spUnidadeMedida;
 
     private Button btSalvar;
 
@@ -41,6 +42,7 @@ public class CadProdutoFragment extends Fragment implements View.OnClickListener
         this.etCodigoDoProduto = (EditText) view.findViewById(R.id.etCodigoDoProduto);
         this.etEstoqueDoProduto = (EditText) view.findViewById(R.id.etEstoque);
         this.spCategoriaDoProduto = (Spinner) view.findViewById(R.id.spCategoria);
+        this.spUnidadeMedida = (Spinner) view.findViewById(R.id.spUnidadeMedida);
         this.btSalvar = (Button) view.findViewById(R.id.btSalvarTela);
         this.btSalvar.setOnClickListener(this);//definindo o listener do botão
 
@@ -58,6 +60,7 @@ public class CadProdutoFragment extends Fragment implements View.OnClickListener
               String qtd = this.etEstoqueDoProduto.getText().toString();  //aux conversão string para inteiro
               produto.setEstoqueProduto(Integer.valueOf(qtd));           //conversão string para inteiro
               produto.setCategoriaProduto(this.spCategoriaDoProduto.getSelectedItemPosition());
+              produto.setUnidadeMedida(this.spUnidadeMedida.getSelectedItemPosition());
 
               //mensagem de sucesso
               Context context = view.getContext();

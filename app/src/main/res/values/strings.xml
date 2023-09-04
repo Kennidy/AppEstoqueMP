@@ -24,4 +24,16 @@
 
     </string-array>
 
+    <string-array name="unidadedemedida">
+        <item>Selecionar Unidade de Medida</item>
+        <item>Un</item>
+        <item>kg</item>
+        <item>g</item>
+        <item>l</item>
+        <item>ml</item>
+
+    </string-array>
+
 </resources>
+
+

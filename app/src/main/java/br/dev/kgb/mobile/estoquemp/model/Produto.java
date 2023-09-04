@@ -9,6 +9,7 @@ public class Produto {
 
     private int id;
     private int categoriaProduto;
+    private int unidadeMedida;
     private String nomeProduto;
     private String codigoProduto;
     private int estoqueProduto;
@@ -23,6 +24,8 @@ public class Produto {
             this.setNomeProduto((String) jp.get("nomeProduto"));
             numero = (int) jp.get("categoriaProduto");
             this.setCategoriaProduto(numero);
+            numero = (int) jp.get("unidadeMedida");
+            this.setUnidadeMedida(numero);
             this.setCodigoProduto((String) jp.get("codigoProduto"));
             numero = (int) jp.get("estoqueProduto");
             this.setEstoqueProduto(numero);
@@ -37,6 +40,7 @@ public class Produto {
         this.setCategoriaProduto(0);
         this.setCodigoProduto("");
         this.setEstoqueProduto(0);
+        this.setUnidadeMedida(0);
 
     }
     //Metodo retorna o objeto com dados no formato JSON
@@ -49,6 +53,7 @@ public class Produto {
             json.put("codigoProduto", this.codigoProduto);
             json.put("codigoProduto", this.codigoProduto);
             json.put("estoqueProduto", this.estoqueProduto);
+            json.put("unidadeMedida", this.unidadeMedida);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -59,6 +64,10 @@ public class Produto {
     public int getId(){return this.id; }
     public int getCategoriaProduto(){
         return this.categoriaProduto;
+    }
+
+    public int getUnidadeMedida(){
+        return this.unidadeMedida;
     }
     public String getNomeproduto(){ return  this.nomeProduto;}
     public String getCodigoProduto(){return this.codigoProduto;}
@@ -87,6 +96,12 @@ public class Produto {
         }
     }
 
+    public void setUnidadeMedida(int unmedPro){
+        if (unmedPro >= 1 && unmedPro <=6){
+            this.unidadeMedida = unmedPro;
+        }else
+            this.unidadeMedida = 0;
+    }
     public void setEstoqueProduto(int ee){
         this.estoqueProduto = ee;
     }

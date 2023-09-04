@@ -24,7 +24,7 @@
                 android:id="@+id/spCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/categoriadoproduto"/>
+                android:entries="@array/categoriadoproduto" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -65,11 +65,24 @@
                 android:ems="10"
                 android:inputType="number" />
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unidade de Medida" />
+
+            <Spinner
+                android:id="@+id/spUnidadeMedida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/unidadedemedida" />
+
             <Button
                 android:id="@+id/btSalvarTela"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_salvar" />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
