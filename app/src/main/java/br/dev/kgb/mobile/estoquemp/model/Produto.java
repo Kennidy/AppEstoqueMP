@@ -21,13 +21,13 @@ public class Produto {
         try {
             Integer numero = (int) jp.get("id");
             this.setId(numero);
-            this.setNomeProduto((String) jp.get("nomeProduto"));
-            numero = (int) jp.get("categoriaProduto");
+            this.setNomeProduto((String) jp.get("nomeproduto"));
+            numero = (int) jp.get("idtcategoriaproduto");
             this.setCategoriaProduto(numero);
-            numero = (int) jp.get("unidadeMedida");
+            numero = (int) jp.get("idunidademedida");
             this.setUnidadeMedida(numero);
-            this.setCodigoProduto((String) jp.get("codigoProduto"));
-            numero = (int) jp.get("estoqueProduto");
+            this.setCodigoProduto((String) jp.get("codproduto"));
+            numero = (int) jp.get("estoqueproduto");
             this.setEstoqueProduto(numero);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -48,12 +48,11 @@ public class Produto {
         JSONObject json = new JSONObject();
         try {
             json.put("id", this.id);
-            json.put("nomeProduto", this.nomeProduto);
-            json.put("categoriaProduto", this.categoriaProduto);
-            json.put("codigoProduto", this.codigoProduto);
-            json.put("codigoProduto", this.codigoProduto);
-            json.put("estoqueProduto", this.estoqueProduto);
-            json.put("unidadeMedida", this.unidadeMedida);
+            json.put("nomeproduto", this.nomeProduto);
+            json.put("idtcategoriaproduto", this.categoriaProduto);
+            json.put("codproduto", this.codigoProduto);
+            json.put("estoqueproduto", this.estoqueProduto);
+            json.put("idunidademedida", this.unidadeMedida);
         } catch (JSONException e) {
             e.printStackTrace();
         }
