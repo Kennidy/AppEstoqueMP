@@ -19,7 +19,7 @@ public class Produto {
     //CONSTRUTOR - inicializa atributos de um arquivo JSon
     public Produto (JSONObject jp) {
         try {
-            Integer numero = (int) jp.get("id");
+            Integer numero = (int) jp.get("ididproduto");
             this.setId(numero);
             this.setNomeProduto((String) jp.get("nomeproduto"));
             numero = (int) jp.get("idtcategoriaproduto");
@@ -47,7 +47,7 @@ public class Produto {
     public JSONObject toJsonObject() {
         JSONObject json = new JSONObject();
         try {
-            json.put("id", this.id);
+            json.put("ididproduto", this.id);
             json.put("nomeproduto", this.nomeProduto);
             json.put("idtcategoriaproduto", this.categoriaProduto);
             json.put("codproduto", this.codigoProduto);
@@ -82,7 +82,7 @@ public class Produto {
 
     public void setNomeProduto(String np){
         if (np.length() < 1){
-            this.nomeProduto = "A definir";
+            this.nomeProduto = "";
         }else {
             this.nomeProduto = np;
         }
