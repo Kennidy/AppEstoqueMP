@@ -88,13 +88,16 @@ public class ConProdutoFragmeny extends Fragment implements
 
         //objeto com informações de filtro da consulta
         Produto produto = new Produto();
-        produto.setCodigoProduto("7894900011609");
+
+        produto.setCodigoProduto("");
+        produto.setCategoriaProduto(1);
+
 
 
         //incluindo objeto no array de envio
         jsonArray.put(produto.toJsonObject());
         //requisição para o Rest Server
-        jsonArrayReq = new JsonArrayRequest(Request.Method.GET,
+        jsonArrayReq = new JsonArrayRequest(Request.Method.POST,
                 "http://10.0.2.2/conproduto.php",
                 jsonArray, this, this);
         //mando executar a requisção na fila do sistema

@@ -33,8 +33,11 @@ public class ConProdutoRecyclerViewAdapter extends RecyclerView.Adapter<ConProdu
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getNomeproduto());
-        holder.mIdView.setText(mValues.get(position).getCodigoProduto());
+        holder.mCodigoView.setText("Codigo: " + mValues.get(position).getCodigoProduto());
+        holder.mNomeView.setText(("Produto: ") + mValues.get(position).getNomeproduto());
+        holder.mCategoriaView.setText("Categoria: " + mValues.get(position).getDeCategoria());
+        holder.mEstoqueView.setText("Estoque: " + mValues.get(position).getEstoqueProduto() + " " + mValues.get(position).getDeUnidade());
+        holder.mEstacoView.setText(" ");
     }
 
     @Override
@@ -43,19 +46,25 @@ public class ConProdutoRecyclerViewAdapter extends RecyclerView.Adapter<ConProdu
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
-        public final TextView mContentView;
+        public final TextView mCodigoView;
+        public final TextView mNomeView;
+        public final TextView mEstoqueView;
+        public final TextView mEstacoView;
+        public final TextView mCategoriaView;
         public Produto mItem;
 
         public ViewHolder(FragmentConProdutoFragmenyBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+            mCodigoView = binding.codigo;
+            mNomeView = binding.nome;
+            mEstacoView = binding.espaco;
+            mEstoqueView = binding.estoque;
+            mCategoriaView = binding.categoria;
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mNomeView.getText() + "'";
         }
     }
 }

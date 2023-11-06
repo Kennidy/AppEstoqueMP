@@ -14,21 +14,45 @@ public class Produto {
     private String codigoProduto;
     private int estoqueProduto;
 
+    private String deCategoria;
+    private String deUnidade;
 
+    public String getDeCategoria() {
+        return deCategoria;
+    }
+
+    public void setDeCategoria(String deCategoria) {
+        this.deCategoria = deCategoria;
+    }
+
+    public String getDeUnidade() {
+        return deUnidade;
+    }
+
+    public void setDeUnidade(String deUnidade) {
+        this.deUnidade = deUnidade;
+    }
 
     //CONSTRUTOR - inicializa atributos de um arquivo JSon
     public Produto (JSONObject jp) {
         try {
-            Integer numero = (int) jp.get("ididproduto");
+            int numero = (int) jp.getInt("ididproduto");
             this.setId(numero);
-            this.setNomeProduto((String) jp.get("nomeproduto"));
-            numero = (int) jp.get("idtcategoriaproduto");
-            this.setCategoriaProduto(numero);
-            numero = (int) jp.get("idunidademedida");
-            this.setUnidadeMedida(numero);
-            this.setCodigoProduto((String) jp.get("codproduto"));
-            numero = (int) jp.get("estoqueproduto");
+            this.setNomeProduto((String) jp.getString("nomeproduto"));
+
+            this.setCodigoProduto((String) jp.getString("codproduto"));
+            numero = (int) jp.getInt("estoqueproduto");
             this.setEstoqueProduto(numero);
+            this.setDeCategoria(jp.getString("categoria"));
+            this.setDeUnidade(jp.getString("unidademedida"));
+
+            /*
+             numero = (int) jp.getInt("idtcategoriaproduto");
+            this.setCategoriaProduto(numero);
+            numero = (int) jp.getInt("idunidademedida");
+            this.setUnidadeMedida(numero);
+             */
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -89,7 +113,7 @@ public class Produto {
     }
     public void setCodigoProduto(String cp) {
         if (cp.length() < 13) {
-            this.codigoProduto = "Incorreto";
+            this.codigoProduto = "";
         } else {
             this.codigoProduto = cp;
         }
